@@ -4,6 +4,7 @@ from pydantic.types import UUID as ID
 
 class UserWriteSchema(BaseModel):
     username: str
+    password: str
     first_name: str
     last_name: str
     email: str
@@ -17,3 +18,6 @@ class UserReadSchema(BaseModel):
     last_name: str
     email: str
     phone: str
+
+    class Config:
+        orm_mode = True
